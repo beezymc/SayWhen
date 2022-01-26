@@ -1,0 +1,36 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+model Availability {
+  id String @id @default(uuid())
+  username String @db.VarChar(200)
+  monday String? @db.VarChar(200)
+  tuesday String? @db.VarChar(200)
+  wednesday String? @db.VarChar(200)
+  thursday String? @db.VarChar(200)
+  friday String? @db.VarChar(200)
+  saturday String?  @db.VarChar(200)
+  sunday String? @db.VarChar(200)
+  timezone String @db.VarChar(200)
+  activities Activity[]
+}
+
+model Activity {
+  id String @id @default(uuid())
+  friend_name String @db.VarChar(200)
+  availability Availability @relation(fields: [availability_id], references: [id])
+  availability_id String
+  activity String @db.VarChar(200)
+  day String @db.VarChar(200)
+  time String @db.VarChar(200)
+}
