@@ -10,8 +10,8 @@ export default async function activity(req, res) {
         activity: req.body['activityName'],
         activity_description: req.body['activityDescription'],
         day: req.body['day'],
-        to: parseInt(req.body['activity: from']),
-        from: parseInt(req.body['activity: to']),
+        to: parseInt(req.body['activity: to']),
+        from: parseInt(req.body['activity: from']),
         availability_id: req.body['availabilityId']
       }
     });

@@ -220,7 +220,44 @@ export default function Availability() {
           <DataGrid
             hideFooter={true}
             density={'comfortable'}
-            columns={[{ field: 'Monday', headerName: 'Monday', flex: 1 }, { field: 'Tuesday', headerName: 'Tuesday', flex: 1 }, { field: 'Wednesday', headerName: 'Wednesday', flex: 1 }, { field: 'Thursday', headerName: 'Thursday', flex: 1 }, { field: 'Friday', headerName: 'Friday', flex: 1 }, { field: 'Saturday', headerName: 'Saturday', flex: 1 }, { field: 'Sunday', headerName: 'Sunday', flex: 1 }]}
+            disableColumnMenu={true}
+            columns={[
+              {
+                field: 'Monday',
+                headerName: 'Monday',
+                flex: 1
+              },
+              {
+                field: 'Tuesday',
+                headerName: 'Tuesday',
+                flex: 1
+              },
+              {
+                field: 'Wednesday',
+                headerName: 'Wednesday',
+                flex: 1
+              },
+              {
+                field: 'Thursday',
+                headerName: 'Thursday',
+                flex: 1
+              },
+              {
+                field: 'Friday',
+                headerName: 'Friday',
+                flex: 1
+              },
+              {
+                field: 'Saturday',
+                headerName: 'Saturday',
+                flex: 1
+              },
+              {
+                field: 'Sunday',
+                headerName: 'Sunday',
+                flex: 1
+              }
+            ]}
             rows={rows}
           />
         </div>
@@ -292,14 +329,44 @@ export default function Availability() {
                 hideFooter={true}
                 density={'comfortable'}
                 autoHeight={true}
+                disableColumnMenu={true}
                 sx={{my: 2}}
-                columns={[{ field: 'Activity', headerName: 'Activity', flex: 1 }, { field: 'Description', headerName: 'Description', flex: 3, editComponent: ({ value, onChange }) => (
-                  <TextField
-                    onChange={e => onChange(e.target.value)}
-                    value={value}
-                    multiline
-                  />
-                ) }, { field: 'Day', headerName: 'Day', flex: .5 }, { field: 'Time', headerName: 'Time', flex: 1 }, { field: 'Creator', headerName: 'Creator', flex: 1 }]}
+                columns={[
+                  {
+                    field: 'Activity',
+                    headerName: 'Activity',
+                    flex: 1
+                  },
+                  {
+                    field: 'Description',
+                    headerName: 'Description',
+                    flex: 3,
+                    renderCell: (params) => {
+                      return (
+                        <Tooltip title={params.value} placement='left'>
+                          <div>
+                            {params.value}
+                          </div>
+                        </Tooltip>
+                      );
+                    }
+                  },
+                  {
+                    field: 'Day',
+                    headerName: 'Day',
+                    flex: .5
+                  },
+                  {
+                    field: 'Time',
+                    headerName: 'Time',
+                    flex: 1
+                  },
+                  {
+                    field: 'Creator',
+                    headerName: 'Creator',
+                    flex: 1
+                  }
+                ]}
                 rows={activity}
               />
             </div>
