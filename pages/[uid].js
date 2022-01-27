@@ -343,8 +343,8 @@ export default function Availability() {
                     flex: 3,
                     renderCell: (params) => {
                       return (
-                        <Tooltip title={params.value} placement='left'>
-                          <div>
+                        <Tooltip title={params.value} placement='top'>
+                          <div style={{ overflow: 'hidden', textOverflow: 'ellipsis'}}>
                             {params.value}
                           </div>
                         </Tooltip>
