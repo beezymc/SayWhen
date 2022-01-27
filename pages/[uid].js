@@ -214,7 +214,7 @@ export default function Availability() {
           {`Here are the times (in ${timezone}) when ${username} is free:`}
         </h2>
         <h3>
-          Please keep the URL handy if you'd like to revisit {username}'s page!
+          Please keep the URL handy if you&apos;d like to revisit {username}&apos;s page!
         </h3>
         <div style={{ width: '100%', height: 342 }}>
           <DataGrid
