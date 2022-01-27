@@ -51,7 +51,6 @@ export default function Home() {
     const availabilityData = {};
     availabilityData.username = data.username;
     availabilityData.timezone = data.timezone;
-    console.log(data['Friday0: from'])
     if (friVisible) {
       availabilityData.friday = '';
       if (allFri) {
