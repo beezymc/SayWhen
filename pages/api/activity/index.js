@@ -21,24 +21,3 @@ export default async function activity(req, res) {
   }
   await prisma.$disconnect()
 };
-
-// const availability = await prisma.availability.create({
-//   data: {
-//     username: username,
-//     timezone: timezone,
-//     monday: monday || '',
-//     tuesday: tuesday || '',
-//     wednesday: wednesday || '',
-//     thursday: thursday || '',
-//     friday: friday || '',
-//     saturday: saturday || '',
-//     sunday: sunday || ''
-//   }
-// });
-
-// activity: from: "16"
-// activity: to: "17"
-// activityDescription: "fdgsdfg"
-// activityName: "fdsg"
-// day: "Saturday"
-// friendName: "sasd"

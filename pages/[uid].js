@@ -225,7 +225,7 @@ export default function Availability() {
               {
                 field: 'Monday',
                 headerName: 'Monday',
-                flex: 1
+                flex: 1,
               },
               {
                 field: 'Tuesday',
