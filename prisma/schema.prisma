@@ -10,7 +10,6 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
 model Availability {
   id String @id @default(uuid())
   username String @db.VarChar(200)
@@ -31,6 +30,8 @@ model Activity {
   availability Availability @relation(fields: [availability_id], references: [id])
   availability_id String
   activity String @db.VarChar(200)
+  activity_description String
   day String @db.VarChar(200)
-  time String @db.VarChar(200)
+  from Int
+  to Int
 }

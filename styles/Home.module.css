@@ -108,6 +108,23 @@
   margin-left: 0.5rem;
 }
 
+.activitybox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.activityform {
+  display: flex;
+  flex-direction: column;
+}
+
+.activitytable {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;

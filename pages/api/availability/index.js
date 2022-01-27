@@ -22,4 +22,5 @@ export default async function availability(req, res) {
   } catch {
     res.status(400).json({ message: 'Failure', id: null });
   }
-}
+  await prisma.$disconnect()
+};

@@ -12,25 +12,6 @@ import Select from '@mui/material/Select';
 const Timepicker = ({ day, register, control }) => {
   const [fromTime, setFromTime] = useState('00:00');
   const [toTime, setToTime] = useState('00:00');
-  // const fromValue = getValues(`${day}: From`);
-  // const toValue = getValues(`${day}: To`);
-
-
-  // useEffect(() => {
-  //   register(`${day}: From`);
-  // }, [register]);
-
-  // useEffect(() => {
-  //   register(`${day}: To`);
-  // }, [register]);
-
-  // useEffect(() => {
-  //   setFromTime(fromValue || null)
-  // }, [setFromTime, fromValue]);
-
-  // useEffect(() => {
-  //   setToTime(toValue || null);
-  // }, [setToTime, toValue]);
 
   const handleFromChange = (newTime) => {
     console.log(123, newTime._i)
@@ -40,37 +21,10 @@ const Timepicker = ({ day, register, control }) => {
   const handleToChange = (newTime) => {
     setToTime(newTime);
   };
-
-  /*
-                <FormControl sx={{ minWidth: 300 }}>
-                  <InputLabel id='timezone-label'>Timezone</InputLabel>
-                  <Controller
-                    name='timezone'
-                    control={control}
-                    value={timezone}
-                    onChange={handleTimezone}
-                    defaultValue=""
-                    render={({ field }) => (
-                      <Select
-                        {...field}
-                        labelId='timezone-label'
-                        label='Timezone'
-                        // {...register('timezone', {required: 'Required'})}
-                      >
-                        <MenuItem value={'CST'}>Central Standard Time</MenuItem>
-                        <MenuItem value={'MST'}>Mountain Standard Time</MenuItem>
-                        <MenuItem value={'PST'}>Pacific Standard Time</MenuItem>
-                        <MenuItem value={'AST'}>Alaska Standard Time</MenuItem>
-                        <MenuItem value={'HST'}>Hawaii-Aleutian Standard Time</MenuItem>
-                      </Select>
-                    )}
-                  />
-                </FormControl>
-  */
   return (
     <div>
-      <FormControl sx={{ minWidth: 200 }}>
-        <InputLabel id='from'>Free from</InputLabel>
+      <FormControl sx={{ minWidth: 200, my: 2 }}>
+        <InputLabel id='from'>From</InputLabel>
         <Controller
           name={`${day}: from`}
           control={control}
@@ -81,7 +35,7 @@ const Timepicker = ({ day, register, control }) => {
             <Select
               {...field}
               labelId='from'
-              label='Free from'
+              label='From'
             >
               <MenuItem value={'0'}>12:00am</MenuItem>
               <MenuItem value={'1'}>1:00am</MenuItem>
@@ -111,7 +65,7 @@ const Timepicker = ({ day, register, control }) => {
           )}
         />
       </FormControl>
-      <FormControl sx={{ minWidth: 200 }}>
+      <FormControl sx={{ minWidth: 200, my: 2 }}>
         <InputLabel id='to'>To</InputLabel>
         <Controller
           name={`${day}: to`}
@@ -153,36 +107,6 @@ const Timepicker = ({ day, register, control }) => {
           )}
         />
       </FormControl>
-      {/* <LocalizationProvider dateAdapter={DateAdapter}>
-        <Controller
-          name={`${day}: From`}
-          control={ control }
-          value={fromTime}
-          onChange={handleFromChange}
-          render={({ field }) => (
-            <TimePicker
-              {...field}
-              label="Free From"
-              renderInput={(params) => <TextField {...params} />}
-              minutesStep={30}
-            />
-          )}
-        />
-        <Controller
-          name={`${day}: To`}
-          control={ control }
-          value={toTime}
-          onChange={handleToChange}
-          render={({ field }) => (
-            <TimePicker
-              {...field}
-              label="Until"
-              renderInput={(params) => <TextField {...params} />}
-              minutesStep={30}
-            />
-          )}
-        />
-      </LocalizationProvider> */}
     </div>
   );
 }
